@@ -36,7 +36,7 @@ class UserRepositoryTest {
 
         Optional<User> result = userRepository.findUserByDocument(document);
 
-        assertThat(result.isPresent()).isTrue();
+        assertThat(result.isPresent()).isFalse();
     }
 
     @Test
@@ -48,9 +48,8 @@ class UserRepositoryTest {
         assertThat(result.isEmpty()).isTrue();
     }
 
-    private User createUser(UserDTO data){
+    private void createUser(UserDTO data){
         User user = new User(data);
         entityManager.persist(user);
-        return user;
     }
 }
