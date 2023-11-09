@@ -36,7 +36,7 @@ class UserRepositoryTest {
 
         Optional<User> result = userRepository.findUserByDocument(document);
 
-        assertThat(result.isPresent()).isFalse();
+        assertThat(result.isPresent()).isTrue();
     }
 
     @Test
